@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>AG</Authors>
+    <Company>AG</Company>
+    <Product>Test Class Lib</Product>
+    <Version>1.0.4</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <Target Name="CopyFiles" AfterTargets="Pack">
+    <Copy SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\local-packages-repo\" />
+  </Target>
+</Project>
